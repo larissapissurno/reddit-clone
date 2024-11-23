@@ -1,3 +1,65 @@
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<div class="flex">
+    <%# sidebar %>
+    <div class="border-r border-gray-300 h-svh w-[271px]">sidebar</div>
+
+    <%# main content %>
+    <div class="mx-auto min-w-[1120px]">
+        <%# trending %>
+        <div class="w-100 mt-4 flex items-center justify-items-start gap-4">
+            <div class="w-[280px] h-[210px] border rounded-xl border-gray-300">trend item</div>
+            <div class="w-[280px] h-[210px] border rounded-xl border-gray-300">trend item</div>
+            <div class="w-[280px] h-[210px] border rounded-xl border-gray-300">trend item</div>
+            <div class="w-[280px] h-[210px] border rounded-xl border-gray-300">trend item</div>
+        </div>
+
+        <%# main content %>
+        <div class="flex gap-4 w-full">
+            <%# posts %>
+            <main class="flex-1">posts</main>
+
+            <%# popular communities %>
+            <aside class="w-[316px] min-w-[316px] px-4 pt-2 mt-4 border-gray-50 rounded-xl bg-gray-50">
+                <div class="flex justify-between items-center">
+                    <h2 class="font-semibold uppercase text-xs mt-0 text-slate-500">
+                        <div class="i18n-translatable-text">Popular communities</div>
+                    </h2>
+                </div>
+
+                <div class="my-4">
+                    <ul role="list" class="divide-y divide-gray-100">
+                        <li class="flex justify-between gap-x-6 py-2 px-4">
+                            <div class="flex min-w-0 gap-x-4 items-center justify-items-start">
+                                <img class="size-8 flex-none rounded-full bg-gray-50" src="https://styles.redditmedia.com/t5_2vq0w/styles/communityIcon_6f0n71jeeund1.jpg?format=pjpg&s=0b228651a1d0caf2241281300910cd54db502e27" alt="">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="text-sm/6 font-regular text-gray-800">r/DestinyTheGame</p>
+                                    <p class="truncate text-xs/5 text-gray-500">3.255.535 members</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-2 px-4">
+                            <div class="flex min-w-0 gap-x-4 items-center justify-items-start">
+                                <img class="size-8 flex-none rounded-full bg-gray-50" src="https://styles.redditmedia.com/t5_2vq0w/styles/communityIcon_6f0n71jeeund1.jpg?format=pjpg&s=0b228651a1d0caf2241281300910cd54db502e27" alt="">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="text-sm/6 font-regular text-gray-800">r/DestinyTheGame</p>
+                                    <p class="truncate text-xs/5 text-gray-500">3.255.535 members</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-2 px-4">
+                            <div class="flex min-w-0 gap-x-4 items-center justify-items-start">
+                                <img class="size-8 flex-none rounded-full bg-gray-50" src="https://styles.redditmedia.com/t5_2vq0w/styles/communityIcon_6f0n71jeeund1.jpg?format=pjpg&s=0b228651a1d0caf2241281300910cd54db502e27" alt="">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="text-sm/6 font-regular text-gray-800">r/DestinyTheGame</p>
+                                    <p class="truncate text-xs/5 text-gray-500">3.255.535 members</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <%= link_to "See more", "", class: "text-sm/6 font-bold text-gray-800"%>
+                </div>
+            </aside>
+        </div>
+
+
+    </div>
+</div>

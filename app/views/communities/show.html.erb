@@ -1,9 +1,9 @@
-<div class="content-container">
-  <h2 class="text-base/7 font-semibold text-gray-900"><%= @community.name %></h2>
+<div class="content-container mt-4">
+  <h2 class="text-2xl font-semibold text-gray-900">Community: <%= "r/#{@community.name}" %></h2>
   <p class="mt-1 text-sm/6 text-gray-600">
-    URL: <%= @community.url %>
+    View community details below.
   </p>
 
-  <h4>Rules:</h4>
-  <p><%= @community.rules %></p>
+  
+  <%= render partial: "form", locals: { view_enabled: true } %>
 </div>

@@ -10,8 +10,12 @@
       <%# Buttons %>
       <div class="hidden sm:ml-6 sm:block">
         <div class="flex space-x-4">
-          <%= link_to "Sign-up", new_account_registration_path, class: "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" %>
-          <%= link_to "Sign-in", new_account_session_path, class: "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
+          <% if account_signed_in? %>
+            <%= link_to "Sign-out", destroy_account_session_path, method: :delete, class: "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
+          <% else %>
+            <%= link_to "Sign-up", new_account_registration_path, class: "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" %>
+            <%= link_to "Sign-in", new_account_session_path, class: "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
+          <% end %>
         </div>
       </div>
     </div>

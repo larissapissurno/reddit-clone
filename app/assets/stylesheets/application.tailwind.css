@@ -2,12 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+/* global css vars */
+:root {
+  --container-width: 1120px;
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
+  --color-primary-500: #d83900;
+  --color-primary-600: #ae2c00;
 }
 
-*/
+@layer components {
+  .content-container {
+    @apply mx-auto w-[var(--container-width)];
+  }
+
+  .btn {
+    @apply text-white font-bold py-2 px-4 rounded-full cursor-pointer;
+    @apply transition-all duration-300;
+
+    /* default colors */
+    @apply bg-transparent hover:bg-gray-100;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary-500);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-600);
+  }
+}

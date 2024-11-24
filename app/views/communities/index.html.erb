@@ -1,10 +1,26 @@
-<% if account_signed_in? %>
-  <%= link_to "New Community", new_community_path %>
-<% end %>
 
-<% @communities.each do |community| %>
-  <div class="card">
-    <h3><%= link_to community.name, community %> </h3>
-    <%= simple_format community.rules %>
+
+
+
+
+<div class="content-container mt-4">
+  <div class="flex items-center justify-between">
+    <div>
+      <h2 class="text-2xl font-semibold text-gray-900">Communities</h2>
+      <p class="mt-1 text-sm/6 text-gray-600">
+        Check out the communities below.
+      </p>
+    </div>
+
+    <% if account_signed_in? %>
+      <%= link_to "New Community", new_community_path, class:"btn btn-primary" %>
+    <% end %>
+
   </div>
-<% end %>
+
+  <div class="mt-12 flex items-center justify-start gap-4">
+    <% @communities.each do |community| %>
+      <%= render partial: "community_card", locals: { community: community} %>
+    <% end %>
+  </div>
+</div>

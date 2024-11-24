@@ -31,12 +31,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_23_234907) do
   end
 
   create_table "communities", force: :cascade do |t|
+    t.bigint "account_id"
     t.string "name"
     t.string "url"
     t.text "rules"
     t.integer "total_members"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_communities_on_account_id"
   end
 
   create_table "tawanies", force: :cascade do |t|

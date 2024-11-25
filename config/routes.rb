@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   devise_for :accounts
-  resources :publics
-  resources :communities
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -10,6 +8,14 @@ Rails.application.routes.draw do
 
   # Initialize the application with a welcome page in public/index.html
   root to: "public#index"
+
+  resources :communities
+
+  # Routes for communities/1/posts/1
+  resources :communities do
+    resources :posts
+  end
+  
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

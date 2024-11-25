@@ -1,9 +1,14 @@
 <div class="content-container mt-4">
-  <h2 class="text-2xl font-semibold text-gray-900">Community: <%= "r/#{@community.name}" %></h2>
-  <p class="mt-1 text-sm/6 text-gray-600">
-    View community details below.
-  </p>
+  <div class="flex items-center justify-between">
+    <div>
+      <h2 class="text-2xl font-semibold text-gray-900"><%= "r/#{@community.name}" %></h2>
+    </div>
 
-  
-  <%= render partial: "form", locals: { view_enabled: true } %>
+    <% if account_signed_in? %>
+      <%= link_to "New Post", new_community_post_path(@community), class:"btn btn-primary" %>
+    <% end %>
+
+  </div>
+
+
 </div>

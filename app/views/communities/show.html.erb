@@ -5,10 +5,12 @@
     </div>
 
     <% if account_signed_in? %>
-      <%= link_to "New Post", new_community_post_path(@community), class:"btn btn-primary" %>
+      <%= link_to "Create Post", new_community_post_path(@community), class:"btn btn-primary" %>
     <% end %>
-
   </div>
-
-
+  <div class="flex">
+    <% @posts.each do |post| %>
+      <%= render partial: "post_card", locals: { community: @community, post: post } %>
+    <% end %>
+  </div>
 </div>

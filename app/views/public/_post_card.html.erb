@@ -1,0 +1,15 @@
+<%= link_to community_post_path(community, post) do %>
+  <div class="w-full mt-4">
+    <div class="bg-white p-4 rounded-lg shadow hover:bg-slate-50">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900"><%= truncate post.title, length: 100  %></h3>
+          <p class="text-sm text-gray-600">Posted by <%= post.account.email %> <%= time_ago_in_words(post.created_at) %> ago</p>
+        </div>
+      </div>
+      <div class="mt-4">
+        <p class="text-gray-700"><%= truncate post.body, length: 200 %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

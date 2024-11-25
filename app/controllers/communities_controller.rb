@@ -8,6 +8,10 @@ class CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
+    @posts = @community.posts
+
+    # debug the @posts variable
+    puts @posts.inspect
   end
 
   def new

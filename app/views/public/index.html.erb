@@ -15,7 +15,13 @@
         <%# main content %>
         <div class="flex gap-4 w-full">
             <%# posts %>
-            <main class="flex-1">posts</main>
+            <main class="flex-1">
+                <div class="flex">
+                    <% @posts.each do |post| %>
+                        <%= render partial: "post_card", locals: { community: post.community, post: post } %>
+                    <% end %>
+                </div>
+            </main>
 
             <%# popular communities %>
             <aside class="w-[316px] min-w-[316px] px-4 pt-2 mt-4 border-gray-50 rounded-xl bg-gray-50">

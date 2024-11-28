@@ -1,31 +1,49 @@
-<nav class="bg-white border-b border-gray-300">
-  <div class="relative flex h-14 items-center justify-between px-4">
-    <div class="flex flex-1 items-center justify-between sm:items-stretch">
-      <%# Logo %>
-      <a href="/" class="flex shrink-0 items-center gap-2">
-        <%= image_tag('reddit_logo_image.svg') %>
-        <%= image_tag('reddit_logo_text.svg', height: 'auto', width: '76') %>
-      </a>
+<%= turbo_frame_tag "header" do %>
+  <div
+    data-controller="header"
+    data-header-is-sign-in-modal-visible-value="false"
+    data-header-hidden-class="hidden"
+  >
+    <%# Header %>
+    <nav class="bg-white border-b border-gray-300">
+      <div class="relative flex h-14 items-center justify-between px-4">
+        <div class="flex flex-1 items-center justify-between sm:items-stretch">
+          <%# Logo %>
+          <a href="/" class="flex shrink-0 items-center gap-2">
+            <%= image_tag('reddit_logo_image.svg') %>
+            <%= image_tag('reddit_logo_text.svg', height: 'auto', width: '76') %>
+          </a>
 
-      <%# Buttons %>
-      <div class="hidden sm:ml-6 sm:block">
-        <div class="flex space-x-4">
-          <% if account_signed_in? %>
-            <%= link_to "Sign-out", destroy_account_session_path, method: :delete, class: "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
-          <% else %>
-            <%= link_to "Sign-up", new_account_registration_path, class: "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" %>
-            <%= link_to "Sign-in", new_account_session_path, class: "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
-          <% end %>
+          <%# Buttons %>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <% if account_signed_in? %>
+                <%= link_to "Sign-out", destroy_account_session_path, method: :delete, class: "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
+              <% else %>
+                <%= link_to "Sign-up", new_account_registration_path, class: "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" %>
+                <%= link_to "Sign-in", new_account_session_path, class: "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
+                <button class="btn btn-primary" data-action="click->header#toggleSignInModal">Sign-in</button>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pb-3 pt-2">
-      <%= link_to "Sign-up", new_account_registration_path, class: "block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" %>
-      <%= link_to "Sign-in", new_account_session_path, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <%= link_to "Sign-up", new_account_registration_path, class: "block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" %>
+          <%= link_to "Sign-in", new_account_session_path, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-900 hover:text-white" %>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sign-in modal -->
+    <div
+      class="hidden"
+      data-action="click->header#toggleSignInModal"
+      data-header-target="signInModal">
+      <%= render partial: "sign_in_modal"%>
     </div>
   </div>
-</nav>
+<% end %>

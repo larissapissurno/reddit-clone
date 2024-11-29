@@ -1,16 +1,1 @@
-# .ruby-gemset
-#
-# This file is used to specify the gemset for a Ruby project. A gemset is a self-contained environment that allows you to manage the gems (libraries) used by your project separately from other projects on your system.
-#
-# The .ruby-gemset file is typically located in the root directory of your project and is used by tools like RVM (Ruby Version Manager) to automatically switch to the specified gemset when you navigate to the project directory.
-#
-# By specifying a gemset in this file, you can ensure that your project always uses the correct versions of gems, avoiding conflicts with other projects or system-wide gems.
-#
-# Example:
-#   If you have a project called "myapp" and you want to use a gemset named "myapp-gems", you would create a .ruby-gemset file with the following content:
-#   ```
-#   myapp-gems
-#   ```
-#
-# Note: The .ruby-gemset file is specific to certain Ruby version managers like RVM and may not be used by other tools or setups.
 reddit-clone

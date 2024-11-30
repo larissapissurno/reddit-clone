@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
-  before_action :authenticate_account!, except: [:show]
-  before_action :set_community, only: [:show]
+  before_action :authenticate_account!, except: [ :show ]
+  before_action :set_community, only: [ :show ]
 
   def index
     @communities = Community.all
@@ -29,7 +29,7 @@ class CommunitiesController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def set_community
     @community = Community.find(params[:id])

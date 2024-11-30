@@ -4,7 +4,6 @@
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="sm:col-span-4">
           <%= label_tag :title, "Title", class: 'form-label' %>
-
           <div class="mt-2">
             <div class="form-input">
               <%=
@@ -14,10 +13,8 @@
             </div>
           </div>
         </div>
-
         <div class="sm:col-span-4">
           <%= label_tag :body, "Body", class: 'form-label' %>
-
           <div class="mt-2">
             <div class="form-input">
               <%=
@@ -33,11 +30,8 @@
   </div>
   <div class="mt-6 flex items-center justify-end gap-x-6">
     <%= link_to "Cancel", communities_path, class: "btn text-sm/6 font-semibold text-gray-900" %>
-
     <% if !view_enabled %>
       <%= form.submit "Submit", disable_with: 'Submiting...', class: 'btn btn-primary' %>
-    <% end %>
+    <% end  %>
   </div>
 <% end %>
-
-

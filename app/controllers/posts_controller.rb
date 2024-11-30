@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_account!, except: [:show]
-  before_action :set_post, only: [:show]
+  before_action :authenticate_account!, except: [ :show ]
+  before_action :set_post, only: [ :show ]
 
   def index
     @posts = Post.all
@@ -27,13 +27,13 @@ class PostsController < ApplicationController
     end
   end
 
-  private 
+  private
 
-  def set_post
-    @post = Post.find(params[:id])
-  end
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
-  def post_params
-    params.require(:post).permit(:title, :body, :community_id)
-  end
+    def post_params
+      params.require(:post).permit(:title, :body, :community_id)
+    end
 end

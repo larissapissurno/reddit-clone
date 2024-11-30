@@ -24,5 +24,7 @@
   "[html.erb]": {
     "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
     "editor.formatOnSave": true
-  }
+  },
+
+  "vscode-erb-beautify.keepBlankLines": 2
 }

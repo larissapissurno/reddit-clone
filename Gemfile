@@ -64,7 +64,11 @@ group :test do
   gem "selenium-webdriver"
 end
 
-# For authentication  
+# For authentication
 gem "devise", "~> 4.9"
 
 gem "tailwindcss-rails", "~> 3.0"
+
+# Format erb.html files
+gem "erb_lint"
+gem "htmlbeautifier"

@@ -1,0 +1,25 @@
+linters:
+  class_attribute_with_static_value:
+    enabled: true
+  closing_tag:
+    enabled: true
+  indentation:
+    enabled: true
+  line_length:
+    enabled: true
+  no_inline_styles:
+    enabled: true
+  no_missing_end:
+    enabled: true
+  no_trailing_whitespace:
+    enabled: true
+  self_closing_tag:
+    enabled: true
+  space_inside_brackets:
+    enabled: true
+  space_inside_parens:
+    enabled: true
+  space_inside_squares:
+    enabled: true
+  void_tag:
+    enabled: true

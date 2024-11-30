@@ -2,7 +2,7 @@
   "emeraldwalk.runonsave": {
     "commands": [
       {
-        // Run whenever html, css, or js files are saved
+        // Run when .rb files are saved
         "match": "\\.(rb)$",
         "cmd": "bin/rubocop -A ${file} --fix-layout",
         "runIn": "terminal",
@@ -10,5 +10,19 @@
         "finishStatusMessage": "Rubocop finished"
       }
     ]
+  },
+
+  "files.associations": {
+    "*.html.erb": "erb"
+  },
+
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+    "editor.formatOnSave": true
+  },
+
+  "[html.erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
+    "editor.formatOnSave": true
   }
 }

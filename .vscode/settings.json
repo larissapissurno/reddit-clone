@@ -1,0 +1,14 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        // Run whenever html, css, or js files are saved
+        "match": "\\.(rb)$",
+        "cmd": "bin/rubocop -A ${file} --fix-layout",
+        "runIn": "terminal",
+        "runningStatusMessage": "Running Rubocop...",
+        "finishStatusMessage": "Rubocop finished"
+      }
+    ]
+  }
+}

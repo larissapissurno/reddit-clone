@@ -31,11 +31,11 @@ class CommunitiesController < ApplicationController
 
   private
 
-  def set_community
-    @community = Community.find(params[:id])
-  end
+    def set_community
+      @community = Community.find(params[:id])
+    end
 
-  def community_params
-    params.require(:community).permit(:name, :url, :rules)
-  end
+    def community_params
+      params.require(:community).permit(:name, :url, :rules)
+    end
 end

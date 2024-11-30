@@ -1,26 +1,56 @@
-<h2>Log in</h2>
+<%= turbo_frame_tag "modal" do %>
+  <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg pt-4">
+          <%= form_with(model: resource, as: resource_name, html: {'data-turbo' => "false"}, url: session_path(resource_name), local: true) do |form| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+            <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="flex-col">
+                <h3 class="text-base font-semibold text-gray-900" id="modal-title">Sign-up</h3>
+                <div class="mt-2 block">
+                  <p class="text-sm text-gray-500">
+                    Sign-in to your account
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="bg-white px-4 pb-4 pt-1 sm:p-6 sm:pb-4">
+              <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div class="sm:col-span-8" >
+                  <%= label_tag :email, "E-mail", class: 'form-label' %>
+                  <div class="mt-2 form-input">
+                    <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-input__input" %>
+                  </div>
+                </div>
+                <div class="sm:col-span-8">
+                  <%= label_tag :password, "Password", class: 'form-label' %>
+                  <div class="mt-2 form-input">
+                    <%= form.password_field :password, autocomplete: "current-password", class: "form-input__input" %>
+                  </div>
+                </div>
+                <div class="sm:col-span-8">
+                  <% if devise_mapping.rememberable? %>
+                    <div class="field">
+                      <%= form.check_box :remember_me %>
+                      <%= form.label :remember_me %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 mt-6">
+              <%= form.submit "Submit", disable_with: 'Submitting...', class: 'btn btn-primary' %>
+              <%= link_to "Cancel", root_path, class: 'btn text-sm/6 font-semibold text-gray-900' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

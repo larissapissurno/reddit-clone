@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README documents the steps necessary to get the application up and running.
 
-Things you may want to cover:
+## Ruby version
 
-* Ruby version
+The application uses the Ruby version specified in the [.ruby-version](.ruby-version) file.
 
-* System dependencies
+## Configuration
 
-* Configuration
+1. Copy the example environment variables file and update it with your settings:
 
-* Database creation
+   ```sh
+      cp .env.example .env
+   ```
 
-* Database initialization
+2. Install the required gems:
+   ```
+   bundle install
+   ```
 
-* How to run the test suite
+## Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+To create the database, run:
 
-* Deployment instructions
+```
+ bin/rails db:create
+```
 
-* ...
+## Database initialization
+
+To initialize the database, run:
+
+```
+bin/rails db:migrate
+```
+
+## How to run the test suite
+
+To run the test suite, execute:
+
+```
+bin/rails db:test:prepare
+bin/rails test
+```
+
+## Services (job queues, cache servers, search engines, etc.)
+
+This application uses the following services:
+
+- Redis (for job queues)
+- PostgreSQL (for the database)

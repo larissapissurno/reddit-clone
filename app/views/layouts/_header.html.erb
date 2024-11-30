@@ -13,7 +13,6 @@
             <%= image_tag('reddit_logo_image.svg') %>
             <%= image_tag('reddit_logo_text.svg', height: 'auto', width: '76') %>
           </a>
-
           <%# Buttons %>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
@@ -28,7 +27,6 @@
           </div>
         </div>
       </div>
-
       <!-- Mobile menu, show/hide based on menu state. -->
       <div class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
@@ -37,13 +35,15 @@
         </div>
       </div>
     </nav>
-
     <!-- Sign-in modal -->
     <div
       class="hidden"
-      data-action="click->header#toggleSignInModal"
       data-header-target="signInModal">
-      <%= render partial: "sign_in_modal"%>
+      <%= render 'devise/registrations/sign_in_modal', 
+          resource: Account.new, 
+          resource_name: :account, 
+          devise_mapping: Devise.mappings[:account] %>
     </div>
   </div>
 <% end %>
+<%= turbo_page_requires_reload %>

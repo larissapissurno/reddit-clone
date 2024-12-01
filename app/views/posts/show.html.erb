@@ -1,2 +1,12 @@
-<h2><%= @post.title %></h2>
-<%= simple_format @post.body %>
+<div class="content-container flex-col">
+  <%= render partial: "show_header", locals: { post: @post} %>
+
+  <div class="flex-col mt-8">
+    <div class="flex items-center justify-between">
+      <h3 class="text-lg font-semibold text-gray-900"><%= @post.title %></h3>
+    </div>
+    <div class="mt-4">
+      <p class="text-gray-700"><%= @post.body %></p>
+    </div>
+  </div>
+</div>

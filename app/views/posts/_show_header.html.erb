@@ -1,0 +1,25 @@
+<div class="flex justify-start items-center gap-2 pt-10">
+  <%= link_to root_path do %>
+    <div class="bg-slate-50 p-2 rounded-full hover:shadow-2xl hover:bg-slate-100 cursor-pointer transition-transform">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+      </svg>
+    </div>
+  <% end %>
+
+  <%# TODO: add post community image here when implemented %>
+  <img 
+    class="size-9 flex-none rounded-full bg-gray-50"
+    src="https://styles.redditmedia.com/t5_2vq0w/styles/communityIcon_6f0n71jeeund1.jpg?format=pjpg&s=0b228651a1d0caf2241281300910cd54db502e27"
+    alt=""
+  >
+
+  <div class="flex-col">
+    <div class="flex items-center gap-2">
+      <h2 class="text-sm font-semibold text-gray-900"><%= "r/#{post.community.name}" %></h2>
+      <span class="font-light text-3xl text-gray-600 leading-3">&middot;</span>
+      <span class="text-sm font-light text-gray-600"><%= time_ago_in_words(post.created_at) %> ago</span>
+    </div>
+    <p class="truncate text-sm text-gray-700"><%= post.account.email %></p>
+  </div>
+</div>

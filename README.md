@@ -6,6 +6,10 @@ This README documents the steps necessary to get the application up and running.
 
 The application uses the Ruby version specified in the [.ruby-version](.ruby-version) file.
 
+## Dependencies
+
+- Redis
+
 ## Configuration
 
 1. Copy the example environment variables file and update it with your settings:
@@ -34,6 +38,19 @@ To initialize the database, run:
 ```
 bin/rails db:migrate
 ```
+
+## How to Start the Project
+
+To start the project, follow these steps:
+
+1. Ensure all dependencies are installed and the database is set up as described in the previous sections.
+2. Run the following command to start the development server:
+
+   ```sh
+   ./bin/dev
+   ```
+
+   > This command will start the application and any necessary background services. You can then access the application in your web browser at http://localhost:3000.
 
 ## How to run the test suite
 

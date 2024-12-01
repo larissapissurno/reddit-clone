@@ -12,7 +12,7 @@
 
 @layer components {
   .content-container {
-    @apply mx-auto w-[var(--container-width)];
+    @apply mx-auto w-[var(--container-width)] p-1;
   }
 
   .btn {

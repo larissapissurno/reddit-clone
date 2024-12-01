@@ -20,7 +20,12 @@
   </head>
   <body>
     <%= render partial: "layouts/header" %>
-    <%= yield %>
+    <div class="flex">
+      <%# sidebar %>
+      <div class="border-r border-gray-300 h-svh w-[271px]">sidebar</div>
+
+      <%= yield %> <!-- This is where the main content will be rendered -->
+    </div>
     <%# render partial: "layouts/footer" %>
 
     <%# Modals will be rendered here %>

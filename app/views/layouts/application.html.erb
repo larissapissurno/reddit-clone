@@ -17,10 +17,16 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
   <body>
     <%= render partial: "layouts/header" %>
-    <%= yield %>
+    <div class="flex">
+      <%# sidebar %>
+      <div class="border-r border-gray-300 h-svh w-[271px] min-w-[271px]">sidebar</div>
+
+      <%= yield %> <!-- This is where the main content will be rendered -->
+    </div>
     <%# render partial: "layouts/footer" %>
 
     <%# Modals will be rendered here %>

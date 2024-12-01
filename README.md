@@ -2,6 +2,10 @@
 
 This README documents the steps necessary to get the application up and running.
 
+## Demo
+https://github.com/user-attachments/assets/b88ec772-a497-4843-9e7e-d905b591b939
+
+
 ## Ruby version
 
 The application uses the Ruby version specified in the [.ruby-version](.ruby-version) file.

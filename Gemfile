@@ -69,7 +69,7 @@ end
 # For authentication
 gem "devise", "~> 4.9"
 
-gem "tailwindcss-rails", "~> 3.0"
+gem "tailwindcss-rails", "~> 3.1"
 
 # Format erb.html files
 gem "erb_lint"
